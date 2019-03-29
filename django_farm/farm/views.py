@@ -8,4 +8,4 @@ import json
 
 def home_view(request):
 
-    return render(request, "home/farm_sim.html", {})
+    return render(request, "farm/farm_sim.html", {})

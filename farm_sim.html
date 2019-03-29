@@ -1,7 +1,31 @@
 
+
 <html>
     <head>
     </head>
+        <style>
+            body{
+                background-color: ivory;
+            }
+            #farm_egg, #farm_milk, #farm_bacon, #rest, #take_bathe, #sell_goods{
+                width: 25px;
+                height: 10px;
+            }
+            span{
+                font-size: 5px;
+            }
+            .flex_btn{
+                display: flex;
+                flex-direction: column;
+            }
+            /* .flex_btn button{
+                
+            } */
+        </style>
+            <!-- <header>
+                <h1>Django Farm</h1>
+                <img src=""
+            </header> -->
 
         <main>
 
@@ -9,23 +33,58 @@
 
         </main> 
 
+            <div>
+                <span id="energy_display"></span>
+            </div>
 
-            <span id="energy_display"></span>
-            <span id="day_light_display"></span>
-            <span id="filth_display"></span>
+            <div>
+                <span id="day_light_display"></span>
+            </div>
+
+            <div>
+                <span id="filth_display"></span>
+            </div>
+
             
-            <span id="wallet_display"></span>
-            <span id="milk_display"></span>
-            <span id="eggs_display"></span>
-            <span id="bacon_display"></span>
+            <div>
+                <span id="wallet_display"></span>
+            </div>
 
-            <button id="farm_egg">Farm Chicken</button>
-            <button id="farm_milk">Farm Chicken</button>
-            <button id="farm_bacon">Farm Chicken</button>
-            <button id="rest">Rest</button>
-            <button id="take_bathe">Bathe</button>
+            <div>
+                <span id="milk_display"></span>
+            </div>
 
-            <button id="sell_goods">Sell</button>
+            <div>
+                <span id="eggs_display"></span>
+            </div>
+        
+            <div>
+                <span id="bacon_display"></span>
+            </div>
+        
+
+            <div>
+                <span id="pig_num"></span>
+            </div>
+
+            <div>
+                <span id="coop_num"></span>
+            </div>
+
+            <div>
+                <span id="cow_num"></span>
+            </div>
+
+
+            <div class="flex_btn">
+                <button id="farm_egg">Farm Chicken</button>
+                <button id="farm_milk">Farm Chicken</button>
+                <button id="farm_bacon">Farm Chicken</button>
+                <button id="rest">Rest</button>
+                <button id="take_bathe">Bathe</button>
+                <button id="sell_goods">Sell</button>
+            </div>
+
 
 
 
@@ -62,6 +121,10 @@
                 let eggs_display = document.querySelector('#eggs_display')
                 let bacon_display = document.querySelector('#bacon_display')
 
+                let pig_num = document.querySelector('#pig_num')
+                let coop_num = document.querySelector('#coop_num')
+                let cow_num = document.querySelector('#cow_num')
+
 
                 //fucntions
 
@@ -74,6 +137,11 @@
                     milk_display.innerHTML = 'gallons of milk:' + milk
                     eggs_display.innerHTML = 'eggs:' + eggs
                     bacon_display.innerHTML = 'lb\'s bacon:' + bacon
+
+                    pig_num.innerHTML = pig_count + 'pigs'
+                    coop_num.innerHTML = coop_count + 'chicken coops'
+                    cow_num.innerHTML = cow_count + 'cows'
+                    
                 }
 
                 sell_goods.onclick = function(){
@@ -160,109 +228,50 @@
                     }
                 }
 
-    //             def check_wallet(self):
-    //     return f'{self.wallet} dollars'
-
-    // def new_cow(self):
-    //     if self.wallet < self.cow_price:
-    //         print(f'you do not have enough money, you need ${self.cow_price}. keep on farming')
-    //     elif self.wallet >= self.cow_price:
-    //         self.milk_val += 5
-    //         self.cow_count += 1
-    //         self.wallet -= self.cow_price
-    //         self.cow_price *= 2
-    //         if self.cow_count == 11:
-    //             self.wallet += 400000
-    //             print('Congratulations you got a $400,000 bonus')
-    //         return f' you now have {self.cow_count} cow(s)🐄, and make {self.milk_val} gallons of milk per farming. ${self.wallet} left'
-
-
-    // def make_money(self):
-    //     if self.money == 0:
-    //         self.milk *= 3
-    //         self.bacon *= 4
-    //         self.money += self.milk + self.eggs + self.bacon
-    //         self.wallet += self.money
-    //         return f'you made {self.money} dollars'
-    //     if self.money != 0:
-    //         self.money = 0
-    //         self.milk = 0
-    //         self.bacon = 0
-    //         self.eggs = 0
-    //         return self.money, self.milk, self.bacon, self.eggs
-
-
-
-    //             def milk_cow(self):
-    //     self.milk += self.milk_val
-    //     return f'You have {self.milk} gallon of milk 🐄\nenergy: {self.energy}, filth: {self.filth}, day light: {self.day_light}'
-
-    // def farm_chicken(self):
-    //     self.eggs += self.eggs_val
-    //     return f'You have {self.eggs} eggs 🐔\nenergy: {self.energy}, filth: {self.filth}, day light: {self.day_light}'
-
-    // def make_bacon(self):
-    //     self.bacon += self.bacon_val
-    //     return f'You have {self.bacon} pounds of bacon 🐖\nenergy: {self.energy}, filth: {self.filth}, day light: {self.day_light}'
-
-
-
-
-
-
-
-    //             def bathe(self):
-    //     self.day_light -= 1
-    //     self.filth = 0
-    //     if self.energy <= 0 or self.day_light <= 0:
-    //         print('You ran out of energy and died')
-    //         exit()
-    //     else:
-    //         return f'energy: {self.energy}, filth: {self.filth}, day light: {self.day_light}'
-
-    // def sleep(self):
-    //     self.day_light = 10
-    //     self.energy = 5
-    //     return f'energy: {self.energy}, filth: {self.filth}, day light: {self.day_light}'
-
-
-
-        //         def farm(self):
-        // self.day_light -= 2
-        // self.filth += 1
-        // self.energy -= 1
-        // if self.energy <= 0 or self.day_light <= 0:
-        //     print('You ran out of energy and died')
-        //     exit()
-        // if self.filth > 5:
-        //     print('You got so stinky all the animals left you')
-        //     exit()
-        // else:
-        //     return f'energy: {self.energy}, filth: {self.filth}, day light: {self.day_light}'
-
-
-
-                // self.energy = energy
-                // self.filth = filth
-                // self.day_light = day_light
-                // self.milk = milk
-                // self.milk_val = milk_val
-                // self.eggs = eggs
-                // self.eggs_val = eggs_val
-                // self.bacon = bacon
-                // self.bacon_val = bacon_val
-                // self.money = money
-                // self.wallet = wallet
-                // self.cow_price = cow_price
-                // self.cow_count = cow_count
-                // self.pig_price = pig_price
-                // self.pig_count = pig_count
-                // self.coop_price = coop_price
-                // self.coop_count = coop_count
-        
-                // farmer = Farmer(5, 0, 10, 0, 5, 0, 12, 0, 24, 0, 0, 500, 1, 750, 1, 1000, 1)
-
-                                        
+                new_cow = function(){
+                    if(wallet < cow_price){
+                        alert('not enough money')
+                    } else if(wallet >= cow_price){
+                        update_display()
+                        milk_val += 5
+                        cow_count += 1
+                        wallet -= cow_price
+                        cow_price *= 2
+                    }
+                    if(cow_count === 11){
+                        update_display()
+                        wallet += 400000
+                    }
+                }
+                chicken_coop_upgrade = function(){
+                    if (walet < coop_price){
+                        alert('not enough money')
+                    } else if(wallet >= coop_price){
+                        update_display()
+                        eggs_val += 120
+                        coop_count += 1
+                        wallet -= coop_price
+                        coop_price *= 2
+                        if(coop_count === 11){
+                            update_display()
+                            wallet += 100000
+                        }
+                    }
+                }
+                new_pig = function(){
+                    if (wallet < pig_price){
+                        alert('not enough money')
+                    } else if (wallet >= pig_price){
+                        update_display()
+                        bacon_val += 24
+                        pig_count += 1
+                        wallet -= pig_price
+                        pig_price *= 2
+                    } if (pig_count === 11){
+                        update_display()
+                        wallet += 500000
+                    }
+                }                       
             </script>
 
         </body>

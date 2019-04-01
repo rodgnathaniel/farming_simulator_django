@@ -113,7 +113,7 @@
             <div class="flex_health">
                     <button id="rest">Rest</button>
                     <button id="take_bathe">Bathe</button>
-                    <button id="save_state">Save</button>
+                    <button id="sa">Save</button>
             </div>
 
 
@@ -170,23 +170,23 @@
                 function save_game() {        
                     axios.post("{% url 'farm:save_state' %}",
                             {
-                                 energy: energy,
-                                 filth: filth,
-                                 day_light: day_light,
-                                 milk: milk,
-                                 milk_val: milk_val,
-                                 eggs: eggs,
-                                 eggs_val: eggs_val,
-                                 bacon: bacon,
-                                 bacon_val: bacon_val,
-                                 money: money,
-                                 wallet: wallet,
-                                 cow_price: cow_price,
-                                 cow_count: cow_count,
-                                 pig_price: pig_price,
-                                 pig_count: pig_count,
-                                 coop_price: coop_price,
-                                 coop_count: coop_count
+                                energy: energy,
+                                filth: filth,
+                                day_light: day_light,
+                                milk: milk,
+                                milk_val: milk_val,
+                                eggs: eggs,
+                                eggs_val: eggs_val,
+                                bacon: bacon,
+                                bacon_val: bacon_val,
+                                money: money,
+                                wallet: wallet,
+                                cow_price: cow_price,
+                                cow_count: cow_count,
+                                pig_price: pig_price,
+                                pig_count: pig_count,
+                                coop_price: coop_price,
+                                coop_count: coop_count
                             }, {
                                 headers: {
                                     "X-CSRFToken": "{{ csrf_token }}"

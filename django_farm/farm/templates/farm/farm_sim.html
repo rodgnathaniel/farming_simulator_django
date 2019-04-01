@@ -131,8 +131,6 @@
 
             <script>
 
-
-
                 // different variables for the farm
                 let energy = 5
                 let filth = 0
@@ -168,6 +166,35 @@
 
 
                 //fucntions
+                function save_game() {        
+                    axios.post("{% url 'farm:save_state' %}",
+                            {
+                                 energy: energy,
+                                 filth: filth,
+                                 day_light: day_light,
+                                 milk: milk,
+                                 milk_val: milk_val,
+                                 eggs: eggs,
+                                 eggs_val: eggs_val,
+                                 bacon: bacon,
+                                 bacon_val: bacon_val,
+                                 money: money,
+                                 wallet: wallet,
+                                 cow_price: cow_price,
+                                 cow_count: cow_count,
+                                 pig_price: pig_price,
+                                 pig_count: pig_count,
+                                 coop_price: coop_price,
+                                 coop_count: coop_count
+                            }, {
+                                headers: {
+                                    "X-CSRFToken": "{{ csrf_token }}"
+                                }
+                            }
+                        ).then(function(response) {
+                        })
+                }
+
 
                 update_display = function(){
                     energy_display.innerHTML = 'energy:  ' + energy

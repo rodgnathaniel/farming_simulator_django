@@ -113,6 +113,7 @@
             <div class="flex_health">
                     <button id="rest">Rest</button>
                     <button id="take_bathe">Bathe</button>
+                    <button id="save_state">Save</button>
             </div>
 
 
@@ -211,7 +212,9 @@
                     cow_num.innerHTML = cow_count + ':  cows'
                     
                 }
-
+                save_state.onclick = function(){
+                    save_game()
+                }
                 sell_goods.onclick = function(){
                     sell()
                     update_display()

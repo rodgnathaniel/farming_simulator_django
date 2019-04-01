@@ -13,6 +13,7 @@
             } */
             span{
                 font-size: 100%;
+                text-align: center;
             }
             .flex_farm{
                 display: flex;
@@ -130,84 +131,6 @@
 
             <script>
 
-// {% if game_state %}
-
-// let True = true
-// let False = false
-// let stair_collision = {{ game_state.stair_collision }}
-// let cabnet_collision = {{ game_state.cabnet_collision }}
-// let rail2_collision = {{ game_state.rail2_collision }}
-// let duskball_collision = {{ game_state.duskball_collision }}
-// let painting_collision = {{ game_state.painting_collision }}
-// let haunted_collision = {{ game_state.haunted_collision }}
-// let lucario_collision = {{ game_state.lucario_collision }}
-
-// let duskball_is = {{ game_state.duskball_is }}
-// let haunted_painting_is = {{ game_state.haunted_painting_is }}
-// let lucario_is = {{ game_state.lucario_is }}
-// let computer_on = {{ game_state.computer_on }}
-// let poke_ball_is = {{ game_state.poke_ball_is }}
-// let left_corner_is = {{ game_state.left_corner_is }}
-// let right_corner_is = {{ game_state.right_corner_is }}
-// let bookshelf_is = {{ game_state.bookshelf_is }}
-// let bear_is = {{ game_state.bear_is }} 
-// let move_ball_down = {{ game_state.move_ball_down }}
-// let ball_gone = {{ game_state.ball_gone }}
-// let scroll_is = {{ game_state.scroll_is }}
-// {% else %}
-
-// let stair_collision = 0
-// let cabnet_collision = 0
-// let rail2_collision = 0
-// let duskball_collision = 0
-// let painting_collision = 0
-// let haunted_collision = 0
-
-// let lucario_collision = false
-// let duskball_is = false
-// let haunted_painting_is = false
-// let lucario_is = false
-// let computer_on = false
-// let poke_ball_is = false
-// let left_corner_is = false
-// let right_corner_is = false
-// let bookshelf_is = false
-// let bear_is = false 
-// let move_ball_down = false
-// let ball_gone = false
-// let scroll_is = false
-// {% endif %}
-
-// function save_game() {        
-//         axios.post("{% url 'boat:save_state' %}",
-//                 {
-//                     duskball_is: duskball_is,
-//                     haunted_painting_is: haunted_painting_is,
-//                     lucario_is: lucario_is,
-//                     computer_on: computer_on,
-//                     poke_ball_is: poke_ball_is,
-//                     left_corner_is: left_corner_is,
-//                     right_corner_is: right_corner_is,
-//                     bookshelf_is: bookshelf_is,
-//                     bear_is: bear_is, 
-//                     move_ball_down: move_ball_down,
-//                     ball_gone: ball_gone,
-//                     scroll_is: scroll_is,
-//                     stair_collision: stair_collision,
-//                     cabnet_collision: cabnet_collision,
-//                     rail2_collision: rail2_collision,   
-//                     duskball_collision: rail2_collision,
-//                     painting_collision: rail2_collision,
-//                     haunted_collision: rail2_collision,
-//                     lucario_collision: lucario_collision,
-//                 }, {
-//                     headers: {
-//                         "X-CSRFToken": "{{ csrf_token }}"
-//                     }
-//                 }
-//             ).then(function(response) {
-//             })
-//     }
 
 
                 // different variables for the farm
@@ -361,6 +284,7 @@
                         wallet += 400000
                     }
                 }
+
                 chicken_coop_upgrade = function(){
                     if (walet < coop_price){
                         alert('not enough money')
@@ -376,6 +300,7 @@
                         }
                     }
                 }
+
                 new_pig = function(){
                     if (wallet < pig_price){
                         alert('not enough money')
@@ -389,7 +314,8 @@
                         update_display()
                         wallet += 500000
                     }
-                }                       
+                }        
+
             </script>
 
         </body>

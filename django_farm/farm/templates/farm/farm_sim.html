@@ -113,7 +113,7 @@
             <div class="flex_health">
                     <button id="rest">Rest</button>
                     <button id="take_bathe">Bathe</button>
-                    <button id="sa">Save</button>
+                    <button id="save_state">Save</button>
             </div>
 
 
@@ -129,8 +129,9 @@
 
 
              
-
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" type="text/javascript"></script>
             <script>
+                
 
                 // different variables for the farm
                 let energy = 5
@@ -186,7 +187,7 @@
                                 pig_price: pig_price,
                                 pig_count: pig_count,
                                 coop_price: coop_price,
-                                coop_count: coop_count
+                                coop_count: coop_count,
                             }, {
                                 headers: {
                                     "X-CSRFToken": "{{ csrf_token }}"

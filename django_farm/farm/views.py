@@ -39,3 +39,15 @@ def save_state(request):
     state = State(energy=energy, filth=filth, day_light=day_light, milk=milk, milk_val=milk_val, eggs=eggs, eggs_val=eggs_val, bacon=bacon, bacon_val=bacon_val, money=money, wallet=wallet, cow_price=cow_price, cow_count=cow_count, pig_price=pig_price, pig_count=pig_count, coop_price=coop_price, coop_count=coop_count)
     state.save()
     return HttpResponse('hi')
+
+def register_view(request):
+    if request.method == 'POST':
+        form = UserRegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            messages.success(request, f'Account Created for {username}!')
+            return redirect(reverse('login'))
+    else:
+        form = UserRegisterForm()
+    return render(request, 'farm/registration.html', {'form': form})

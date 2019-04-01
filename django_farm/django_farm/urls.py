@@ -24,4 +24,7 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('farm.urls')),
+    path('register/', register_view, name='register'),
+    path('login/', views.LoginView.as_view(template_name='users/login.html'), name='login'),
+    path('logout/', views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -31,7 +31,7 @@ os.sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('farm.urls')),
-    path('register/', views.register_view, name='register'),
+    # path('register/', views.register_view, name='register'),
     path('login/', views.LoginView.as_view(template_name='farm/login.html'), name='login'),
     path('logout/', views.LogoutView.as_view(template_name='farm/logout.html'), name='logout'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
